@@ -15,12 +15,12 @@ for (let i = 0; i<totalNavList; i++){
   const a = navList[i].querySelector("a");
   a.addEventListener("click", function(){
      for (let j=0; j< totalNavList; j++){
-         navList[j].querySelectorAll("a").classList.remove("active");
+         navList[j].querySelector("a").classList.remove("active");
       }
 
-  this.classList.add("active");
-  nav.classList.add("close");
-  })
+      this.classList.add("active");
+      nav.classList.add("close");
+  });
 }
 
 window.addEventListener("scroll", () => {
@@ -38,10 +38,10 @@ window.addEventListener("scroll", () => {
     else{
       link.classList.remove("active");
     }
-  })
+  });
 });
 
-if (window.innerwidth <1200){
+if (window.innerWidth <1200){
   burger = document.querySelector(".menu-btn");
   console.log(burger);
   burger.addEventListener("click", function (){
@@ -52,7 +52,7 @@ var submitted = false;
 
 function validateName() {
   var name = document.getElementById('name').value;
-  if(!name.match(/^[a-zA-Z]{3,}(?: [a-zA-z]+){0,2}$/)){
+  if(!name.match(/^[a-zA-Z]{3,}(?: [a-zA-Z]+){0,2}$/)){
     alert("Please enter your correct name!");
     return false;
   }
@@ -65,7 +65,7 @@ function validateName() {
 
 function validateEmail() {
   var email = document.getElementById('email').value;
-  if(!name.match(/^[A-Za-z\.\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)){
+  if(!email.match(/^[A-Za-z\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)){
     alert("Please enter a valid email address!");
     return false;
   }
@@ -73,7 +73,7 @@ function validateEmail() {
   return true;
 }
 
-function resetFrom() {
+function resetForm() {
   document.getElementById('contact-form').reset();
   console.log('Reset');
 }
